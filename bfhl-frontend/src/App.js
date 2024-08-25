@@ -7,10 +7,11 @@ function App() {
   const [responseData, setResponseData] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState([]);
 
+const apiUrl = 'https://bfhl-backend-beta.vercel.app/bfhl';
   const handleSubmit = async () => {
     try {
       const jsonData = JSON.parse(inputData);
-      const response = await fetch('http://localhost:5000/bfhl', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
